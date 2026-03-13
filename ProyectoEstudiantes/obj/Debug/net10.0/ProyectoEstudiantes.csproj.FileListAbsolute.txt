@@ -1,0 +1,15 @@
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\bin\Debug\net10.0\ProyectoEstudiantes.exe
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\bin\Debug\net10.0\ProyectoEstudiantes.deps.json
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\bin\Debug\net10.0\ProyectoEstudiantes.runtimeconfig.json
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\bin\Debug\net10.0\ProyectoEstudiantes.dll
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\bin\Debug\net10.0\ProyectoEstudiantes.pdb
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.AssemblyInfoInputs.cache
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.AssemblyInfo.cs
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.csproj.CoreCompileInputs.cache
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.sourcelink.json
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.dll
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\refint\ProyectoEstudiantes.dll
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.pdb
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ProyectoEstudiantes.genruntimeconfig.cache
+C:\Users\Andis\Desktop\ProyectoEstudiantes\ProyectoEstudiantes\obj\Debug\net10.0\ref\ProyectoEstudiantes.dll
