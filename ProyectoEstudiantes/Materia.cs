@@ -1,3 +1,5 @@
+using System;
+
 namespace SistemaGestionEstudiantes
 {
     public class Materia
@@ -15,6 +17,11 @@ namespace SistemaGestionEstudiantes
         {
             nombre = nombreMateria;
             nota = notaMateria;
+        }
+
+        public void MostrarMateria()
+        {
+            Console.WriteLine("Materia: " + nombre + " | Nota: " + nota);
         }
     }
 }
