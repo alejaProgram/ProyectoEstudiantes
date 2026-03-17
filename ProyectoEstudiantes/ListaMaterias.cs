@@ -1,3 +1,5 @@
+using System;
+
 namespace SistemaGestionEstudiantes
 {
     public class ListaMaterias
@@ -10,3 +12,4 @@ namespace SistemaGestionEstudiantes
         }
     }
 }
+
