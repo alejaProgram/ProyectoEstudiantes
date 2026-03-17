@@ -1,3 +1,4 @@
+
 namespace SistemaGestionEstudiantes
 {
     public class NodoMateria
