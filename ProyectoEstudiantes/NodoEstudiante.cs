@@ -1,20 +1,14 @@
-namespace SistemaGestionEstudiantes
+namespace ProyectoEstudiantes
 {
     public class NodoEstudiante
     {
-        public Estudiante dato;
-        public NodoEstudiante siguiente;
+        public Estudiante Datos;
+        public NodoEstudiante Siguiente;
 
-        public NodoEstudiante()
+        public NodoEstudiante(Estudiante datos)
         {
-            dato = null;
-            siguiente = null;
-        }
-
-        public NodoEstudiante(Estudiante estudiante)
-        {
-            dato = estudiante;
-            siguiente = null;
+            Datos = datos;
+            Siguiente = null;
         }
     }
 }

@@ -1,18 +1,28 @@
-namespace SistemaGestionEstudiantes
+namespace ProyectoEstudiantes
 {
     public class Estudiante
     {
-        public int codigo;
-        public string nombre;
-        public string apellido;
-        public string direccion;
-        public string celular;
-        public string email;
-        public ListaMaterias listaMaterias;
+        public int Codigo;
+        public string Nombre;
+        public string Apellido;
+        public string Direccion;
+        public string Celular;
+        public string Email;
 
-        public Estudiante()
+        // Referencia a materias 
+        public ListaMaterias ListaMaterias;
+
+        public Estudiante(int codigo, string nombre, string apellido,
+                          string direccion, string celular, string email)
         {
-            listaMaterias = new ListaMaterias();
+            Codigo = codigo;
+            Nombre = nombre;
+            Apellido = apellido;
+            Direccion = direccion;
+            Celular = celular;
+            Email = email;
+
+            ListaMaterias = new ListaMaterias(); // conexión
         }
     }
 }
