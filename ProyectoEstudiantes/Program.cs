@@ -80,7 +80,7 @@ namespace ProyectoEstudiantes
                         {
                             // estudiante.ListaMaterias.MenuMaterias();
 
-                            Console.WriteLine("Aquí se gestionan las materias (lo hace tu compañera).");
+                            Console.WriteLine("Aquí se gestionan las materias");
                         }
                         else
                         {
