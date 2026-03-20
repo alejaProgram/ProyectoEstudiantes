@@ -29,9 +29,26 @@ namespace SistemaGestionEstudiantes
                     actual = actual.siguiente;
                 }
 
-                    actual.siguiente = nuevoNodo;
-                }
+                actual.siguiente = nuevoNodo;
+            }
+        }
+        public void ListarMaterias()
+        {
+            if (cabeza == null)
+            {
+                Console.WriteLine("No hay materias");
+                return;
+            }
+
+            NodoMateria actual = cabeza;
+
+            while (actual != null)
+            {
+
+                actual.dato.MostrarMateria();
+                actual = actual.siguiente;    
             }
         }
     }
+}
 
