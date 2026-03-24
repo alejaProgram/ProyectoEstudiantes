@@ -68,6 +68,39 @@ namespace SistemaGestionEstudiantes
 
             Console.WriteLine("Materia no encontrada");
         }
+
+        public void EliminarMateria(string nombre)
+        {
+            if (cabeza == null)
+            {
+                Console.WriteLine("Lista vacia");
+                return;
+            }
+
+            if (cabeza.dato.nombre == nombre)
+            {
+                cabeza = cabeza.siguiente;
+                Console.WriteLine("Materia eliminada");
+                return;
+            }
+
+            NodoMateria actual = cabeza;
+
+            while (actual.siguiente != null)
+            {
+                if (actual.siguiente.dato.nombre == nombre)
+                {
+                    actual.siguiente = actual.siguiente.siguiente;
+
+                    Console.WriteLine("Materia eliminada");
+                    return;
+                }
+
+                actual = actual.siguiente;
+            }
+
+            Console.WriteLine("Materia no encontrada");
+        }
     }
 }
 
