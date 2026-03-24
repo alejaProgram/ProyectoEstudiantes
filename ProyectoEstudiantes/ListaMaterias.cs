@@ -49,6 +49,25 @@ namespace SistemaGestionEstudiantes
                 actual = actual.siguiente;    
             }
         }
+
+        public void ModificarNota(string nombre, double nuevaNota)
+        {
+            NodoMateria actual = cabeza;
+
+            while (actual != null)
+            {
+                if (actual.dato.nombre == nombre)
+                {
+                    actual.dato.nota = nuevaNota;
+                    Console.WriteLine("Nota actualizada");
+                    return;
+                }
+
+                actual = actual.siguiente;
+            }
+
+            Console.WriteLine("Materia no encontrada");
+        }
     }
 }
 
