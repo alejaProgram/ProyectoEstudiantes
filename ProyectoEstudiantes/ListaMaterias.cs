@@ -101,6 +101,23 @@ namespace SistemaGestionEstudiantes
 
             Console.WriteLine("Materia no encontrada");
         }
+
+        public bool ExisteMateria(string nombre)
+        {
+            NodoMateria actual = cabeza;
+
+            while (actual != null)
+            {
+                if(actual.dato.nombre == nombre)
+                {
+                    return true;
+                }
+
+                actual = actual.siguiente;
+            }
+
+            return false;
+        }
     }
 }
 
