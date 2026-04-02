@@ -13,6 +13,11 @@ namespace SistemaGestionEstudiantes
 
         public void AgregarMateria(string nombre, double nota)
         {
+            if (ExisteMateria(nombre))
+            {
+                Console.WriteLine("Lmateria ya existe");
+            }
+
             Materia nuevaMateria = new Materia(nombre, nota);
             NodoMateria nuevoNodo = new NodoMateria(nuevaMateria);
 
@@ -31,6 +36,8 @@ namespace SistemaGestionEstudiantes
 
                 actual.siguiente = nuevoNodo;
             }
+
+            Console.WriteLine("Materia agregada");
         }
         public void ListarMaterias()
         {
@@ -56,9 +63,9 @@ namespace SistemaGestionEstudiantes
 
             while (actual != null)
             {
-                if (actual.dato.nombre == nombre)
+                if (actual.dato.Nombre == nombre)
                 {
-                    actual.dato.nota = nuevaNota;
+                    actual.dato.Nota = nuevaNota;
                     Console.WriteLine("Nota actualizada");
                     return;
                 }
@@ -77,7 +84,7 @@ namespace SistemaGestionEstudiantes
                 return;
             }
 
-            if (cabeza.dato.nombre == nombre)
+            if (cabeza.dato.Nombre == nombre)
             {
                 cabeza = cabeza.siguiente;
                 Console.WriteLine("Materia eliminada");
@@ -88,10 +95,10 @@ namespace SistemaGestionEstudiantes
 
             while (actual.siguiente != null)
             {
-                if (actual.siguiente.dato.nombre == nombre)
+                if (actual.siguiente.dato.Nombre == nombre)
                 {
                     actual.siguiente = actual.siguiente.siguiente;
-
+                    
                     Console.WriteLine("Materia eliminada");
                     return;
                 }
@@ -108,7 +115,7 @@ namespace SistemaGestionEstudiantes
 
             while (actual != null)
             {
-                if(actual.dato.nombre == nombre)
+                if(actual.dato.Nombre == nombre)
                 {
                     return true;
                 }
