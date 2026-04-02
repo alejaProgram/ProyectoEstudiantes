@@ -7,11 +7,12 @@ namespace ProyectoEstudiantes
         static void Main(string[] args)
         {
             ListaEstudiantes lista = new ListaEstudiantes();
-            int opcion;
+            int opcion = 0;
 
             do
             {
-                Console.WriteLine("\n--- MENÚ ---");
+                Console.Clear();
+                Console.WriteLine("=== SISTEMA DE GESTIÓN DE ESTUDIANTES Y MATERIAS ===");
                 Console.WriteLine("1. Agregar estudiante");
                 Console.WriteLine("2. Listar estudiantes");
                 Console.WriteLine("3. Buscar estudiante");
@@ -19,12 +20,20 @@ namespace ProyectoEstudiantes
                 Console.WriteLine("5. Gestionar materias");
                 Console.WriteLine("6. Salir");
 
-                Console.Write("Opción: ");
-                opcion = int.Parse(Console.ReadLine());
+                Console.Write("Seleccione una opción: ");
+
+                if (!int.TryParse(Console.ReadLine(), out opcion))
+                {
+                    Console.WriteLine("Opción inválida.");
+                    Pausa();
+                    continue;
+                }
 
                 switch (opcion)
                 {
                     case 1:
+                        Console.WriteLine("\n--- AGREGAR ESTUDIANTE ---");
+
                         Console.Write("Nombre: ");
                         string nombre = Console.ReadLine();
 
@@ -41,56 +50,99 @@ namespace ProyectoEstudiantes
                         string email = Console.ReadLine();
 
                         lista.Agregar(nombre, apellido, direccion, celular, email);
+
+                        Pausa();
                         break;
 
                     case 2:
+                        Console.WriteLine("\n--- LISTA DE ESTUDIANTES ---");
                         lista.Listar();
+                        Pausa();
                         break;
 
                     case 3:
+                        Console.WriteLine("\n--- BUSCAR ESTUDIANTE ---");
+
                         Console.Write("Código: ");
-                        int codBuscar = int.Parse(Console.ReadLine());
-
-                        Estudiante est = lista.Buscar(codBuscar);
-
-                        if (est != null)
+                        if (int.TryParse(Console.ReadLine(), out int codBuscar))
                         {
-                            Console.WriteLine($"Nombre: {est.Nombre} {est.Apellido}");
+                            Estudiante est = lista.Buscar(codBuscar);
+
+                            if (est != null)
+                            {
+                                Console.WriteLine($"Nombre: {est.Nombre} {est.Apellido}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Estudiante no encontrado.");
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("Estudiante no encontrado.");
+                            Console.WriteLine("Código inválido.");
                         }
+
+                        Pausa();
                         break;
 
                     case 4:
+                        Console.WriteLine("\n--- ELIMINAR ESTUDIANTE ---");
+
                         Console.Write("Código: ");
-                        int codEliminar = int.Parse(Console.ReadLine());
-
-                        lista.Eliminar(codEliminar);
-                        break;
-
-                    case 5:
-                        Console.Write("Código del estudiante: ");
-                        int cod = int.Parse(Console.ReadLine());
-
-                        Estudiante estudiante = lista.Buscar(cod);
-
-                        if (estudiante != null)
+                        if (int.TryParse(Console.ReadLine(), out int codEliminar))
                         {
-                            // estudiante.ListaMaterias.MenuMaterias();
-
-                            Console.WriteLine("Aquí se gestionan las materias");
+                            lista.Eliminar(codEliminar);
                         }
                         else
                         {
-                            Console.WriteLine("El estudiante no existe.");
+                            Console.WriteLine("Código inválido.");
                         }
+
+                        Pausa();
                         break;
 
+                    case 5:
+                        Console.WriteLine("\n--- GESTIONAR MATERIAS ---");
+
+                        Console.Write("Código del estudiante: ");
+                        if (int.TryParse(Console.ReadLine(), out int cod))
+                        {
+                            Estudiante estudiante = lista.Buscar(cod);
+
+                            if (estudiante != null)
+                            {
+                                Console.WriteLine("Aquí se gestionan las materias (pendiente)");
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("El estudiante no existe.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Código inválido.");
+                        }
+
+                        Pausa();
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Saliendo del sistema...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        Pausa();
+                        break;
                 }
 
             } while (opcion != 6);
+        }
+        static void Pausa()
+        {
+            Console.WriteLine("\nPresione una tecla para continuar...");
+            Console.ReadKey();
         }
     }
 }

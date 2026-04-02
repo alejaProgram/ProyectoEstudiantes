@@ -8,8 +8,6 @@ namespace ProyectoEstudiantes
         public string Direccion;
         public string Celular;
         public string Email;
-
-        // Referencia a materias 
         public ListaMaterias ListaMaterias;
 
         public Estudiante(int codigo, string nombre, string apellido,
@@ -22,7 +20,7 @@ namespace ProyectoEstudiantes
             Celular = celular;
             Email = email;
 
-            ListaMaterias = new ListaMaterias(); // conexión
+            ListaMaterias = new ListaMaterias(); 
         }
     }
 }
