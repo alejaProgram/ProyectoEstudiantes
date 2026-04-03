@@ -48,5 +48,28 @@ namespace ProyectoEstudiantes
 
             Console.WriteLine($"Estudiante agregado con código: {codigo}");
         }
+
+        public void Listar()
+        {
+            if (cabeza == null)
+            {
+                Console.WriteLine("No hay estudiantes registrados.");
+                return;
+            }
+
+            NodoEstudiante actual = cabeza;
+            Console.WriteLine("\n=== LISTA DE ESTUDIANTES ===");
+            
+            while (actual != null)
+            {
+                Console.WriteLine($"Código: {actual.Datos.Codigo}");
+                Console.WriteLine($"Nombre: {actual.Datos.Nombre} {actual.Datos.Apellido}");
+                Console.WriteLine($"Dirección: {actual.Datos.Direccion}");
+                Console.WriteLine($"Celular: {actual.Datos.Celular}");
+                Console.WriteLine($"Email: {actual.Datos.Email}");
+                Console.WriteLine("----------------------------------------");
+                actual = actual.Siguiente;
+            }
+        }
     }
 }
