@@ -87,5 +87,39 @@ namespace ProyectoEstudiantes
             
             return null;
         }
+
+        public void Eliminar(int codigo)
+        {
+            if (cabeza == null)
+            {
+                Console.WriteLine("No hay estudiantes registrados.");
+                return;
+            }
+
+            if (cabeza.Datos.Codigo == codigo)
+            {
+                cabeza = cabeza.Siguiente;
+                Console.WriteLine($"Estudiante con código {codigo} eliminado.");
+                return;
+            }
+
+            NodoEstudiante actual = cabeza;
+            NodoEstudiante anterior = null;
+
+            while (actual != null && actual.Datos.Codigo != codigo)
+            {
+                anterior = actual;
+                actual = actual.Siguiente;
+            }
+
+            if (actual == null)
+            {
+                Console.WriteLine("Estudiante no encontrado.");
+                return;
+            }
+
+            anterior.Siguiente = actual.Siguiente;
+            Console.WriteLine($"Estudiante con código {codigo} eliminado.");
+        }
     }
 }
