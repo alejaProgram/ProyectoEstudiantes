@@ -71,5 +71,21 @@ namespace ProyectoEstudiantes
                 actual = actual.Siguiente;
             }
         }
+
+        public Estudiante Buscar(int codigo)
+        {
+            NodoEstudiante actual = cabeza;
+            
+            while (actual != null)
+            {
+                if (actual.Datos.Codigo == codigo)
+                {
+                    return actual.Datos;
+                }
+                actual = actual.Siguiente;
+            }
+            
+            return null;
+        }
     }
 }
