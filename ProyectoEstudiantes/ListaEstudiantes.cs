@@ -66,15 +66,12 @@ namespace ProyectoEstudiantes
 
             NodoEstudiante actual = cabeza;
             Console.WriteLine("\n=== LISTA DE ESTUDIANTES ===");
+            Console.WriteLine($"{"Código",-6} {"Nombre",-20} {"Celular",-15} {"Email",-25}");
+            Console.WriteLine(new string('-', 70));
             
             while (actual != null)
             {
-                Console.WriteLine($"Código: {actual.Datos.Codigo}");
-                Console.WriteLine($"Nombre: {actual.Datos.Nombre} {actual.Datos.Apellido}");
-                Console.WriteLine($"Dirección: {actual.Datos.Direccion}");
-                Console.WriteLine($"Celular: {actual.Datos.Celular}");
-                Console.WriteLine($"Email: {actual.Datos.Email}");
-                Console.WriteLine("----------------------------------------");
+                Console.WriteLine($"{actual.Datos.Codigo,-6} {actual.Datos.Nombre + " " + actual.Datos.Apellido,-20} {actual.Datos.Celular,-15} {actual.Datos.Email,-25}");
                 actual = actual.Siguiente;
             }
         }
@@ -106,7 +103,7 @@ namespace ProyectoEstudiantes
             if (cabeza.Datos.Codigo == codigo)
             {
                 cabeza = cabeza.Siguiente;
-                Console.WriteLine($"Estudiante con código {codigo} eliminado.");
+                Console.WriteLine($"Estudiante con código {codigo} eliminado correctamente.");
                 return;
             }
 
@@ -121,12 +118,12 @@ namespace ProyectoEstudiantes
 
             if (actual == null)
             {
-                Console.WriteLine("Estudiante no encontrado.");
+                Console.WriteLine($"Estudiante con código {codigo} no encontrado.");
                 return;
             }
 
             anterior.Siguiente = actual.Siguiente;
-            Console.WriteLine($"Estudiante con código {codigo} eliminado.");
+            Console.WriteLine($"Estudiante con código {codigo} eliminado correctamente.");
         }
     }
 }
