@@ -12,6 +12,13 @@ namespace ProyectoEstudiantes
         }
         public void Agregar(string nombre, string apellido, string direccion, string celular, string email)
         {
+
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido))
+            {
+                Console.WriteLine(" El nombre y apellido son obligatorios.");
+                return;
+            }
+
             int codigo = 1;
 
             if (cabeza != null)
@@ -46,7 +53,7 @@ namespace ProyectoEstudiantes
                 actual.Siguiente = nuevoNodo;
             }
 
-            Console.WriteLine($"Estudiante agregado con código: {codigo}");
+            Console.WriteLine($" Estudiante '{nombre} {apellido}' agregado con éxito con código: {codigo}");
         }
 
         public void Listar()
