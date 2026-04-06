@@ -1,6 +1,6 @@
 using System;
 
-namespace SistemaGestionEstudiantes
+namespace ProyectoEstudiantes
 {
     public class Materia
     {

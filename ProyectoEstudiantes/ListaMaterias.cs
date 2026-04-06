@@ -1,6 +1,6 @@
 using System;
 
-namespace SistemaGestionEstudiantes
+namespace ProyectoEstudiantes
 {
     public class ListaMaterias
     {
@@ -10,12 +10,12 @@ namespace SistemaGestionEstudiantes
         {
             cabeza = null;
         }
-
         public void AgregarMateria(string nombre, double nota)
         {
             if (ExisteMateria(nombre))
             {
-                Console.WriteLine("Lmateria ya existe");
+                Console.WriteLine("La materia ya existe");
+                return;
             }
 
             Materia nuevaMateria = new Materia(nombre, nota);
@@ -39,6 +39,7 @@ namespace SistemaGestionEstudiantes
 
             Console.WriteLine("Materia agregada");
         }
+
         public void ListarMaterias()
         {
             if (cabeza == null)

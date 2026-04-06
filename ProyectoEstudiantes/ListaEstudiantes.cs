@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace ProyectoEstudiantes
 {
@@ -10,12 +11,44 @@ namespace ProyectoEstudiantes
         {
             cabeza = null;
         }
+
+        private bool EmailValido(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, patron);
+        }
+
+
+        private bool CelularValido(string celular)
+        {
+            if (string.IsNullOrWhiteSpace(celular))
+                return false;
+
+            string soloNumeros = Regex.Replace(celular, @"\s", "");
+            return Regex.IsMatch(soloNumeros, @"^\d{10,}$");
+        }
+
         public void Agregar(string nombre, string apellido, string direccion, string celular, string email)
         {
 
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido))
             {
                 Console.WriteLine(" El nombre y apellido son obligatorios.");
+                return;
+            }
+
+            if (!CelularValido(celular))
+            {
+                Console.WriteLine(" El celular debe contener al menos 10 dígitos numéricos.");
+                return;
+            }
+
+            if (!EmailValido(email))
+            {
+                Console.WriteLine(" El email no tiene un formato válido (ej: usuario@dominio.com).");
                 return;
             }
 
