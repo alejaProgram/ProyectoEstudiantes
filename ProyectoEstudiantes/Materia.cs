@@ -1,20 +1,27 @@
-namespace ProyectoEstudiantes
+using System;
+
+namespace SistemaGestionEstudiantes
 {
     public class Materia
     {
-        public string nombre;
-        public double nota;
+        public string Nombre { get; set; }
+        public double Nota { get; set; }
 
         public Materia()
         {
-            nombre = "";
-            nota = 0.0;
+            Nombre = "";
+            Nota = 0.0;
         }
 
         public Materia(string nombreMateria, double notaMateria)
         {
-            nombre = nombreMateria;
-            nota = notaMateria;
+            Nombre = nombreMateria;
+            Nota = notaMateria;
+        }
+
+        public void MostrarMateria()
+        {
+            Console.WriteLine("Materia: " + Nombre + " | Nota: " + Nota);
         }
     }
 }

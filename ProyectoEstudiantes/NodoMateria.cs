@@ -1,4 +1,5 @@
-namespace ProyectoEstudiantes
+
+namespace SistemaGestionEstudiantes
 {
     public class NodoMateria
     {
